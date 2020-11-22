@@ -3,14 +3,14 @@ let counter = 1;
     function AddDetails(){
       var button = document.getElementById('button');
       button.addEventListener('click', SaveDetails, false);
-      let sortBy = document.getElementById('sortBy');
+      let sortBy = document.getElementById('SortBy');
       sortBy.addEventListener('change', SortAndDisplay, false);
-      document.getElementById('userID').value = counter;
+      document.getElementById('userid').value = counter;
     }
     function SortAndDisplay(){
-      console.log("Sorting", document.getElementById('sortBy').value);
+      console.log("Sorting", document.getElementById('SortBy').value);
       let sortBy = document.getElementById('sortBy').value;
-      if(sortBy === "userID"){
+      if(sortBy === "userid"){
         data.sort(function (a, b) {
           return a.id - b.id;
         });
@@ -26,12 +26,12 @@ let counter = 1;
     function SaveDetails(){
 
 
-      let name = document.getElementById('userName');
-      let occupation = document.getElementById('userOccupation');
+      let name = document.getElementById('username');
+      let occupation = document.getElementById('userocc');
       data.push({id: counter, name: name.value, occupation: occupation.value });
       console.log(data);
       counter++;
-      document.getElementById('userID').value = counter;
+      document.getElementById('userid').value = counter;
       name.value='';
       occupation.value ='';
 
